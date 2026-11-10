@@ -1,0 +1,17 @@
+name: talkentra
+
+services:
+  db_main:
+    image: postgres:18
+    container_name: talkentra-db
+    restart: always
+    ports:
+      - '35432:5432'
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: talkentra_db
+      POSTGRES_USER: postgres
+    volumes:
+      - talkentra_pg_data:/var/lib/postgresql
+volumes:
+  talkentra_pg_data:

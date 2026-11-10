@@ -1,0 +1,20 @@
+{
+  "name": "talkentry-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Talkentry example: reference server, Expo, and Vite",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "server"
+  ],
+  "scripts": {
+    "mobile": "npm run start --workspace @talkentry/example",
+    "web": "npm run start --workspace @talkentry/web-example",
+    "server": "npm run start:dev --workspace talkentry-server",
+    "docker:up": "npm run docker:up --workspace talkentry-server",
+    "docker:down": "npm run docker:down --workspace talkentry-server",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test:resolution": "node --test scripts/testing/example-resolution.test.mjs"
+  }
+}
